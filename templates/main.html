@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{%  block content %}
+<div class="container" ng-controller="MainController">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="text-center">
+                <h1>Scan Ticket</h1>
+
+                <h2 ng-show="data.flashSuccess"></h2>
+
+                <input type="text" class="form-control" name="" autofocus="true">
+
+                <button ng-click="scanTicket()">Scan</button>
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+{% endblock %}

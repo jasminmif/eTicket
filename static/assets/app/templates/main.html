@@ -1,0 +1,47 @@
+<div class="row">
+	<div class="col-md-12">
+	    <form class="text-center" ng-submit="scanTicket()">
+	        <h1>Scan Ticket</h1>
+			
+			<div style="height: 35px;">
+				<h2 style="margin: 0; color: green;" ng-show="data.flashSuccess">Success</h2>
+			</div>
+
+			<div  style="height: 60px;">
+				<div ng-show="data.flashError">
+					<h2 style="margin: 0; color: red;">Error</h2>
+					<span>{{ data.errorMessage }}</span>
+				</div>
+			</div>
+
+	        <input type="text" class="form-control" autofocus="true" ng-model="data.ticketUUID">
+
+	        <!-- <button ng-click="scanTicket()">Scan</button> -->
+	    </form>
+
+	   <!--  <audio id="successSound" src="./static/assets/audio/success-sound-effect.mp3"></audio>
+	    <audio id="errorSound" src="./static/assets/audio/error-sound-effect.mp3"></audio> -->
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-3">
+		<div>
+			<label>
+				Success:
+				<input type="checkbox" ng-model="data.playSuccessSound" />
+			</label>
+		</div>
+
+		<div>
+			<label>
+				Error:
+				<input type="checkbox" ng-model="data.playErrorSound" />
+			</label>
+		</div>
+	</div>
+	<div class="col-md-9">
+    	<pre style="max-height: 350px; overflow:auto" id="logs">
+    		{{ logs | json }}
+    	</pre>
+    </div>
+</div>

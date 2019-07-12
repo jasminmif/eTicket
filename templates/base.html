@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <link href="{% static  "assets/css/style.css" %}" rel="stylesheet" media="screen">
+        <link href="{% static  "assets/css/bootstrap.min.css" %}" rel="stylesheet" media="screen">
+        <title>eTicket</title>
+    </head>
+    <body ng-app="app">
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">eTicket</a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-haspopup="true" aria-expanded="false">Tickets <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/#/add-tickets">Add <b>Tickets</b></a></li>
+                                <li><a href="/#/generate-ticket-images">Generate <b>Ticket Images</b></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+            <div>
+            <ng-view></ng-view>
+            </div>
+        </div>
+
+        <script src="{% static "assets/js/jquery-2.2.0.min.js" %}"></script>
+        <script src="{% static "assets/js/bootstrap.min.js" %}"></script>
+        <script src="{% static "assets/js/angular.min.js" %}"></script>
+        <script src="{% static "assets/js/angular-route.min.js" %}"></script>
+
+        <script src="{% static "assets/app/app/app.js" %}"></script>
+        <script src="{% static "assets/app/app/route-config.js" %}"></script>
+        <script src="{% static "assets/app/services/requestService.js" %}"></script>
+
+        <script src="{% static "assets/app/controllers/MainController.js" %}"></script>
+        <script src="{% static "assets/app/controllers/AddTicketsController.js" %}"></script>
+        <script src="{% static "assets/app/controllers/GenerateTicketController.js" %}"></script>
+        {% block javascript %}
+        {% endblock %}
+    </body>
+</html>
